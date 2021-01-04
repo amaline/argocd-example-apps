@@ -1,0 +1,16 @@
+apiVersion: projectcontour.io/v1
+kind: HTTPProxy
+metadata:
+  name: guestbook
+  namespace: default
+spec:
+  virtualhost:
+    fqdn: guestbook.maline.us
+    tls:
+      secretName: guestbook-maline-us-tls
+  routes:
+    - conditions:
+      - prefix: /
+      services:
+        - name: guestbook-ui
+          port: 80
