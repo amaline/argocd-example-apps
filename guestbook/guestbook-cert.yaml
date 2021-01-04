@@ -4,7 +4,7 @@ metadata:
   name: guestbook-maline-us-certificate
   namespace: default
 spec:
-  commonName: argocd.maline.us
+  commonName: guestbook.maline.us
   dnsNames:
   - guestbook.maline.us
   issuerRef:
