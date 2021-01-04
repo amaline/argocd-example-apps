@@ -1,0 +1,13 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: guestbook-maline-us-certificate
+  namespace: default
+spec:
+  commonName: argocd.maline.us
+  dnsNames:
+  - guestbook.maline.us
+  issuerRef:
+    name: letsencrypt-maline-dns
+    kind: ClusterIssuer
+  secretName: guestbook-maline-us-tls
